@@ -1,0 +1,58 @@
+.main-scene {
+    background-color: white;
+    height: 100%;
+    overflow-x: hidden !important;
+}
+
+.introduction { 
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-display: row;
+    width: 10vw;
+}
+
+.header-text {
+    font-size: 70px;
+    width: 100%;
+    font-family: Nunito Sans;
+    font-weight: 600;
+}
+
+.body-text {
+    font-size: 18px;
+    width: 100%;
+    text-overflow: clip;
+    font-family: Nunito Sans;
+}
+
+.emmet-pfp {
+    margin-left: 5vw;
+    width: 300px;
+    height: 300px;
+    border-radius: 10%;
+    box-shadow: 5px 5px 5px lightgrey;
+}
+
+.rit-hover {
+    text-decoration: none  !important;
+    color: black !important; 
+    border-radius: 10px;
+    border-style: solid;
+    border-color: white;
+    transition: border-width 0s, border-width 0s, border-color 0s, background-color 0s;
+}
+
+.rit-hover:hover {
+    color: white !important;
+}
+
+.rit-hover:active {
+    color: black; 
+}
+
+.icon-hover:hover {
+    scale: 1.05;
+    transition: 100ms;
+    cursor: pointer;
+}

@@ -1,0 +1,30 @@
+.header-link {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .header-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 1px;
+    right: 0;
+    background: #313131;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .header-link:hover::after {
+    width: 100%;
+    left: 0;
+    background: #313131;
+  }
+
+    
+  .current-page::after {
+    width: 100%;
+    left: 0;
+    background: #313131;
+  }
