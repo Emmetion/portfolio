@@ -15,8 +15,8 @@ export default function MobileHeader() {
 
   const tabs = {
     "/about": "About",
-    "/technologies": "Technologies",
     "/projects": "Projects",
+    "/technologies": "Technologies",
     "/contact": "Contact",
   };
 

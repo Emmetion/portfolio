@@ -2,32 +2,6 @@ import React, { useState } from "react";
 
 import "./Technologies.css";
 
-// Icon image imports.
-// import JavaIcon from "../../assets/technologies/JavaIcon.png";
-// import SpringBoot from "../../assets/technologies/SpringBoot.png";
-// import JUnitIcon from "../../assets/technologies/JUnit5.png";
-// import MavenIcon from "../../assets/technologies/MavenIcon.svg";
-// import PythonIcon from "../../assets/technologies/PythonIcon.png";
-// import FlaskIcon from "../../assets/technologies/FlaskIcon.png";
-// import MatPlotLibIcon from "../../assets/technologies/MatPlotLibIcon.png";
-// import HTMLCSSIcon from "../../assets/technologies/HTMLandCSSIcon.png";
-// import BootstrapIcon from "../../assets/technologies/BootstrapIcon.png";
-// import JavaScriptIcon from "../../assets/technologies/JavaScriptIcon.svg";
-// import ReactIcon from "../../assets/technologies/ReactIcon.png";
-// import AngularIcon from "../../assets/technologies/AngularIcon.png";
-// import CIcon from "../../assets/technologies/CIcon.png";
-// import GolangIcon from "../../assets/technologies/Go-Logo_Blue.svg";
-// import STM32Icon from "../../assets/technologies/STM32Icon.avif";
-// import SQLIcon from "../../assets/technologies/SQLIcon.png";
-// import PostgresSQLIcon from "../../assets/technologies/PostgreSQLIcon.png";
-// import MySQLIcon from "../../assets/technologies/MySQLIcon.png";
-// import FileIcon from "../../assets/technologies/FileIcon.png";
-// import JacksonIcon from "../../assets/technologies/JacksonIcon.webp";
-// import CSVIcon from "../../assets/technologies/CSVIcon.png";
-// End
-
-// SVGs
-
 import { FaComputer } from "react-icons/fa6";
 
 import JavaIcon from "../../assets/tech_svgs/java.svg";
@@ -62,6 +36,8 @@ import VSCodeIcon from "../../assets/tech_svgs/Visual Studio Code (VS Code).svg"
 import Tech from "./Tech/Tech";
 
 export default function Technologies() {
+  const numberOfStars = 10;
+
   return (
     <div className="container mx-auto text-center md:translate-y-3 items-center">
       <div className="h1">
@@ -70,7 +46,7 @@ export default function Technologies() {
           Technologies
         </p>
       </div>
-      <div className="max-sm:w-fit max-sm:px-5 sm:w-[370px] md:w-[430px] mx-auto">
+      <div className="max-sm:w-[370px] sm:w-[370px] max-sm:px-5 md:w-[430px] mx-auto">
         {/* <p>
           Over the course of my career, I've developed many strong skills in
           various programming lanauges, softwares, and frameworks alike. Here
@@ -81,23 +57,26 @@ export default function Technologies() {
           years I've been programming.
         </p>
       </div>
-      <div className="mx-auto flex flex-row justify-center mt-2">
+      <div className="mx-auto flex flex-row justify-center mt-2 relative">
         <p className="text-2xl my-auto mr-3">Editor of Choice: </p>
-        <Tech
-          name="IntelliJ"
-          bgcolor="bg-orange-400"
-          bordercolor="border-orange-400"
-          svg={IntelliJIcon}
-        />
+        <div>
+          <Tech
+            name="IntelliJ"
+            bgcolor="bg-orange-400"
+            bordercolor="border-orange-400"
+            svg={IntelliJIcon}
+          />
+        </div>
       </div>
+
       <div className="text-3xl text-left md:w-[600px] sm:w-[500px] items-center mx-auto">
         <div className="mt-10">
           <p className="max-sm:text-center">Languages</p>
           <div className="container flex flex-wrap overflow gap-1 mt-2 max-sm:justify-center">
             <Tech
               name="Java"
-              bgcolor="bg-red-400"
-              bordercolor="border-red-400"
+              bgcolor="bg-orange-400"
+              bordercolor="border-orange-400"
               svg={JavaIcon}
             />
             <Tech

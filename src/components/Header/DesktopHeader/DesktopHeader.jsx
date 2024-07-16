@@ -9,8 +9,8 @@ export default function DesktopHeader() {
 
   const tabs = {
     "/about": "About",
-    "/technologies": "Technologies",
     "/projects": "Projects",
+    "/technologies": "Technologies",
     "/contact": "Contact",
   };
 
