@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate, useNavigation } from "react-router-dom";
 import classNames from "classnames";
 
+import HamburgerIcon from "../../../assets/burger-menu-svgrepo-com.svg";
+import { FaGithub, FaLink, FaLinkedin } from "react-icons/fa6";
+import { FaCodeBranch, FaLinkedinIn } from "react-icons/fa";
+
 export default function MobileHeader() {
   const [open, setOpen] = useState(false);
+  const menuRef = useRef(); // Step 1: Create a ref for the menu
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -15,66 +20,74 @@ export default function MobileHeader() {
     "/contact": "Contact",
   };
 
+  // Handle cicking outside the menu
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuRef]);
+
   return (
-    <div>
-      <div className="w-full h-[30px] mt-5 flex justify-center group mb-10">
+    <div className="relative">
+      <div className="w-full flex justify-between items-center p-5">
         <button
-          onClick={() => {
-            setOpen(!open);
-          }}
-          className="w-fit h-[40px] mt-6 flex justify-center mb-20"
+          onClick={() => setOpen(!open)}
+          className="w-fit h-[40px] flex items-center justify-center"
         >
-          <div className="w-[220px] bg-gray-100 text-black rounded-md border-2 flex flex-row">
-            <p className="mx-auto text-2xl font-thin">
-              {tabs[location.pathname]}
-            </p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              className={classNames(
-                "text-gray-500 size-6 rotate-180 duration-100 absolute translate-y-[20%] translate-x-[760%]",
-                {
-                  "rotate-90": open === true,
-                }
-              )}
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m8.25 4.5 7.5 7.5-7.5 7.5"
-              />
-            </svg>
-          </div>
+          <img src={HamburgerIcon} alt="Menu" className="w-6 h-6" />
         </button>
       </div>
-      {open && (
-        <div className="flex flex-col group mb-10 absolute border-white w-fit left-1/2 transform -translate-x-1/2 ">
+      <div
+        ref={menuRef}
+        className={classNames(
+          "absolute top-0 left-0 h-screen w-[200px] bg-white transition-transform",
+          {
+            "translate-x-0  z-20": open,
+            "-translate-x-full": !open,
+          }
+        )}
+      >
+        <div className="p-5 bg-white opacity-100">
           {Object.entries(tabs).map(([path, label]) => {
-            // if (label === tabs[location.pathname]) return null;
-
             return (
-              <button
-                onClick={() => {
-                  navigate(path);
-                  setOpen(false);
-                }}
-                key={label}
-                className="flex"
-              >
-                <div className="mx-auto w-[220px] bg-gray-100 flex items-center border-2 border-gray-200 rounded-md">
-                  <h1 className="mx-auto" key={path}>
-                    {location.pathname === path ? "-" : ""} {label}{" "}
-                    {location.pathname === path ? "-" : ""}
-                  </h1>
-                </div>
-              </button>
+              <a href={path} className="block p-2">
+                {path === location.pathname ? "> " : ""} {label}
+              </a>
             );
           })}
+          <div className="mt-3 flex flex-row gap-3 w-fit mx-auto">
+            <a href="https://github.com/Emmetion" target="_black">
+              <FaGithub size={30} className="icon-hover" />
+            </a>
+            <a href="https://linkedin.com/in/emmet-spencer" target="_black">
+              <FaLinkedin size={30} className="icon-hover" />
+            </a>
+            <a href="https://github.com/Emmetion/portfolio" target="_black">
+              <FaCodeBranch size={30} className="icon-hover" />
+            </a>
+          </div>
+          <div className="container mt-3">
+            <p className="w-fit mx-auto">Ⓒ Emmet Spencer</p>
+          </div>
         </div>
-      )}
+      </div>
+      <div
+        className={classNames(
+          "absolute h-screen w-screen opacity-45 bg-black top-0 transition-opacity duration-[3s]",
+          {
+            "translate-x-0 z-10 opacity-45": open,
+            "-translate-x-full opacity-100": !open,
+          }
+        )}
+      ></div>
     </div>
   );
 }

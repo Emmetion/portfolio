@@ -32,7 +32,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/technologies",
-    errorElement: <ErrorRedirect />,
+    // errorElement: <ErrorRedirect />,
     element: (
       <div>
         <Header/>

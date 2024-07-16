@@ -7,18 +7,18 @@ import classNames from "classnames";
 
 export default function About() {
   return (
-    <div className="my-[16vh] flex flex-col">
+    <div className="flex flex-col md:translate-y-1/2">
+      <img
+        alt="Emmet's Profile"
+        src={EmmetPfp}
+        className={classNames(
+          "sm:block md:hidden hover:scale-105 duration-150 w-[200px] h-[200px] rounded-xl shadow-lg shadow-gray-400 self-center mb-3"
+        )}
+      />
       <div className="items-center justify-center flex flex-row">
         <div>
           <a className="max-sm:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-xl:text-9xl font-sans flex flex-row items-end">
             Hello!{" "}
-            <img
-              alt="Emmet's Profile"
-              src={EmmetPfp}
-              className={classNames(
-                "sm:block md:hidden hover:scale-105 duration-150 w-[150px] h-[150px] rounded-xl shadow-lg shadow-gray-400 self-center ml-10"
-              )}
-            />
           </a>
           <br />
           <div className="w-[320px] md:w-[440px] lg:w-[540px] pl-1 lg:text-xl">
