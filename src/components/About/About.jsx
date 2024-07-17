@@ -67,13 +67,6 @@ export default function About() {
           />
         </div>
       </div>
-      <div className="mx-auto w-fit mt-12">
-        <a href='/projects'>
-          <p className="border-8 bg-orange-400 border-orange-400 rounded-md text-xl text-white hover:cursor-pointer hover:bg-orange-500 hover:border-orange-500 hover:scale-110 duration-200">
-            View My Projects
-          </p>
-        </a>
-      </div>
     </div>
   );
 }

@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
 import "./Technologies.css";
+import {
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+} from "@material-tailwind/react";
 
 import { FaComputer } from "react-icons/fa6";
 
@@ -36,22 +41,19 @@ import VSCodeIcon from "../../assets/tech_svgs/Visual Studio Code (VS Code).svg"
 import Tech from "./Tech/Tech";
 
 export default function Technologies() {
-  const numberOfStars = 10;
+  const [open, setOpen] = React.useState(1);
+
+  const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
   return (
-    <div className="container mx-auto text-center md:translate-y-3 items-center">
+    <div className="mx-auto text-center md:translate-y-3 items-center md:w-[600px] sm:w-[400px]">
       <div className="h1">
-        <p className="max-sm:text-3xl sm:text-5xl md:text-6xl pb-2 pt-5 justify-center flex flex-row">
+        <p className="text-3xl sm:text-5xl md:text-6xl pb-2 pt-5 justify-center flex flex-row">
           <FaComputer className="my-auto mt-1 mr-3" />
           Technologies
         </p>
       </div>
       <div className="max-sm:w-[370px] sm:w-[370px] max-sm:px-5 md:w-[430px] mx-auto">
-        {/* <p>
-          Over the course of my career, I've developed many strong skills in
-          various programming lanauges, softwares, and frameworks alike. Here
-          I'll highlight some of my greatest experiences.
-        </p> */}
         <p>
           Here you can view some of the technologies I've worked with over the
           years I've been programming.
@@ -60,183 +62,68 @@ export default function Technologies() {
       <div className="mx-auto flex flex-row justify-center mt-2 relative">
         <p className="text-2xl my-auto mr-3">Editor of Choice: </p>
         <div>
-          <Tech
-            name="IntelliJ"
-            bgcolor="bg-orange-400"
-            bordercolor="border-orange-400"
-            svg={IntelliJIcon}
-          />
+          <Tech name="IntelliJ" svg={IntelliJIcon} />
         </div>
       </div>
-
-      <div className="text-3xl text-left md:w-[600px] sm:w-[500px] items-center mx-auto">
-        <div className="mt-10">
-          <p className="max-sm:text-center">Languages</p>
+      <Accordion open={open === 1}>
+        <AccordionHeader onClick={() => handleOpen(1)}>
+          Languages
+        </AccordionHeader>
+        <AccordionBody>
           <div className="container flex flex-wrap overflow gap-1 mt-2 max-sm:justify-center">
-            <Tech
-              name="Java"
-              bgcolor="bg-orange-400"
-              bordercolor="border-orange-400"
-              svg={JavaIcon}
-            />
-            <Tech
-              name="Python"
-              bgcolor="bg-blue-400"
-              bordercolor="border-blue-400"
-              svg={PythonIcon}
-            />
-            <Tech
-              name="JavaScript"
-              bgcolor="bg-yellow-400"
-              bordercolor="border-yellow-400"
-              svg={JavaScriptIcon}
-            />
-            <Tech
-              name="C"
-              bgcolor="bg-blue-400"
-              bordercolor="border-blue-400"
-              svg={CIcon}
-            />
-            <Tech
-              name="C++"
-              bgcolor="bg-blue-400"
-              bordercolor="border-blue-400"
-              svg={CPlusPlusIcon}
-            />
-            <Tech
-              name="HTML5"
-              bgcolor="bg-gray-400"
-              bordercolor="border-gray-400"
-              svg={HTMLIcon}
-            />
-            <Tech
-              name="CSS3"
-              bgcolor="bg-gray-400"
-              bordercolor="border-gray-400"
-              svg={CSS3Icon}
-            />
-            <Tech
-              name="Go"
-              svgcolor="text-green-500"
-              bgcolor="bg-green-400"
-              bordercolor="border-green-400"
-              svg={GolangIcon}
-            />
+            <Tech name="Java" svg={JavaIcon} />
+            <Tech name="Python" svg={PythonIcon} />
+            <Tech name="JavaScript" svg={JavaScriptIcon} />
+            <Tech name="C" svg={CIcon} />
+            <Tech name="C++" svg={CPlusPlusIcon} />
+            <Tech name="HTML5" svg={HTMLIcon} />
+            <Tech name="CSS3" svg={CSS3Icon} />
+            <Tech name="Go" svg={GolangIcon} />
           </div>
-        </div>
-        <div className="mt-6">
-          <p className="max-sm:text-center">Frameworks & Libraries</p>
+        </AccordionBody>
+      </Accordion>
+      <Accordion open={open === 2}>
+        <AccordionHeader onClick={() => handleOpen(2)}>
+          Frameworks & Libraries
+        </AccordionHeader>
+        <AccordionBody>
           <div className="container flex flex-wrap overflow gap-1 mt-2 max-sm:justify-center">
-            <Tech
-              name="React"
-              bgcolor="bg-blue-400"
-              bordercolor="border-blue-400"
-              svg={ReactIcon}
-            />
-            <Tech
-              name="Angular"
-              bgcolor="bg-red-400"
-              bordercolor="border-red-400"
-              svg={AngularIcon}
-            />
-            <Tech
-              name="TailwindCSS"
-              bgcolor="bg-blue-400"
-              bordercolor="border-blue-400"
-              svg={TailwindCSSIcon}
-            />
-            <Tech
-              name="Bootstrap"
-              bgcolor="bg-purple-400"
-              bordercolor="border-purple-400"
-              svg={BootstrapIcon}
-            />
-            <Tech
-              name="Spring"
-              bgcolor="bg-green-400"
-              bordercolor="border-green-400"
-              svg={SpringIcon}
-            />
-            <Tech
-              name="Flask"
-              bgcolor="bg-black"
-              bordercolor="border-black"
-              svg={FlaskIcon}
-            />
+            <Tech name="React" svg={ReactIcon} />
+            <Tech name="Angular" svg={AngularIcon} />
+            <Tech name="TailwindCSS" svg={TailwindCSSIcon} />
+            <Tech name="Bootstrap" svg={BootstrapIcon} />
+            <Tech name="Spring" svg={SpringIcon} />
+            <Tech name="Flask" svg={FlaskIcon} />
           </div>
-        </div>
-        <div className="mt-6">
-          <p className="max-sm:text-center">Databases & Softwares</p>
+        </AccordionBody>
+      </Accordion>
+      <Accordion open={open === 3}>
+        <AccordionHeader onClick={() => handleOpen(3)}>
+          Databases & Softwares
+        </AccordionHeader>
+        <AccordionBody>
           <div className="container flex flex-wrap overflow gap-1 mt-2 max-sm:justify-center">
-            <Tech
-              name="PostgreSQL"
-              bgcolor="bg-blue-400"
-              bordercolor="border-blue-400"
-              svg={PostgreSQLIcon}
-            />
-            <Tech
-              name="SQLite"
-              bgcolor="bg-blue-400"
-              bordercolor="border-blue-400"
-              svg={SQLiteIcon}
-            />
-            <Tech
-              name="MySQL"
-              bgcolor="bg-blue-400"
-              bordercolor="border-blue-400"
-              svg={MySQLIcon}
-            />
-            <Tech
-              name="MongoDB"
-              bgcolor="bg-green-400"
-              bordercolor="border-green-400"
-              svg={MongoDBIcon}
-            />
-            <Tech
-              name="Firebase"
-              bgcolor="bg-yellow-400"
-              bordercolor="border-yellow-400"
-              svg={FirebaseIcon}
-            />
-            <Tech
-              name="Docker"
-              bgcolor="bg-blue-400"
-              bordercolor="border-blue-400"
-              svg={DockerIcon}
-            />
-            <Tech
-              name="SonarQube"
-              bgcolor="bg-blue-400"
-              bordercolor="border-blue-400"
-              svg={SonarQubeIcon}
-            />
+            <Tech name="PostgreSQL" svg={PostgreSQLIcon} />
+            <Tech name="SQLite" svg={SQLiteIcon} />
+            <Tech name="MySQL" svg={MySQLIcon} />
+            <Tech name="MongoDB" svg={MongoDBIcon} />
+            <Tech name="Firebase" svg={FirebaseIcon} />
+            <Tech name="Docker" svg={DockerIcon} />
+            <Tech name="SonarQube" svg={SonarQubeIcon} />
           </div>
-        </div>
-        <div className="mt-6">
-          <p className="max-sm:text-center">Editors</p>
+        </AccordionBody>
+      </Accordion>
+      <Accordion open={open === 4}>
+        <AccordionHeader onClick={() => handleOpen(4)}>Editors</AccordionHeader>
+        <AccordionBody>
           <div className="container flex flex-wrap overflow gap-1 mt-2 max-sm:justify-center">
-            <Tech
-              name="IntelliJ"
-              bgcolor="bg-orange-400"
-              bordercolor="border-orange-400"
-              svg={IntelliJIcon}
-            />
-            <Tech
-              name="PyCharm"
-              bgcolor="bg-green-400"
-              bordercolor="border-green-400"
-              svg={PyCharmIcon}
-            />
-            <Tech
-              name="VSCode"
-              bgcolor="bg-blue-400"
-              bordercolor="border-blue-400"
-              svg={VSCodeIcon}
-            />
+            <Tech name="IntelliJ" svg={IntelliJIcon} />
+            <Tech name="PyCharm" svg={PyCharmIcon} />
+            <Tech name="VSCode" svg={VSCodeIcon} />
           </div>
-        </div>
-        <div className="mt-10" />
-      </div>
+        </AccordionBody>
+      </Accordion>
+      <div className="mt-10" />
     </div>
   );
 }
