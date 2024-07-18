@@ -24,7 +24,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/about",
-    errorElement: <ErrorRedirect />,
+    // errorElement: <ErrorRedirect />,
     element: (
       <div>
         <Header />
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/projects",
-    errorElement: <ErrorRedirect />,
+    // errorElement: <ErrorRedirect />,
     element: (
       <div>
         <Header />
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/contact",
-    errorElement: <ErrorRedirect />,
+    // errorElement: <ErrorRedirect />,
     element: (
       <div>
         <Header />
