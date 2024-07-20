@@ -16,12 +16,12 @@ export default function Project({ name, age, type, description, techs }) {
             return <Tech id={index} svg={val} />;
           })}
         </div>
-      </div>
-      
-      <div className="mt-1 row-span-full">
+
+        <div className="mt-1 row-span-full">
           {/* Description */}
           <p className="mx-2 text-left text-lg">{description}</p>
         </div>
+      </div>
     </div>
   );
 }

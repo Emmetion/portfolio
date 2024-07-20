@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCodeBranch, FaGithub, FaLinkedin } from "react-icons/fa";
 import RITLogo from "../../assets/RIT-Logo.png";
-import EmmetPfp from "../../assets/Emmet_Pfp.jpg";
+import EmmetPfp from "../../assets/IMG_5119.png";
 import "./About.css";
 import classNames from "classnames";
 
@@ -17,11 +17,11 @@ export default function About() {
       />
       <div className="items-center justify-center flex flex-row">
         <div>
-          <a className="max-sm:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-xl:text-9xl font-sans flex flex-row items-end">
-            Hello!{" "}
+          <a className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-xl:text-9xl font-sans flex flex-row items-end portfolio-font">
+            Hello!
           </a>
           <br />
-          <div className="w-[320px] md:w-[440px] lg:w-[540px] pl-1 lg:text-xl">
+          <div className="w-[320px] md:w-[440px] lg:w-[540px] pl-1 lg:text-xl portfolio-font">
             <p>
               I'm Emmet, a passionate software developer pursuing a{" "}
               <b>Bachelor of Science</b> in <b>Software Engineering</b> @{" "}
