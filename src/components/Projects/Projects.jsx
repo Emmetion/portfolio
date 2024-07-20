@@ -11,17 +11,17 @@ import MavenIcon from "../../assets/tech_svgs/Apache Maven.svg";
 import JSONIcon from "../../assets/tech_svgs/json-schema.svg";
 import AngularIcon from "../../assets/tech_svgs/Angular.svg";
 import JavaScriptIcon from "../../assets/tech_svgs/JavaScript.svg";
+import JUnit5Icon from "../../assets/tech_svgs/JUnit.svg";
 
 import ReactIcon from "../../assets/tech_svgs/React.svg";
 import PythonIcon from "../../assets/tech_svgs/Python.svg";
-import FlaskIcon from "../../assets/tech_svgs/flask-light.svg"
-import DockerIcon from "../../assets/tech_svgs/docker.svg"
+import FlaskIcon from "../../assets/tech_svgs/flask-light.svg";
+import DockerIcon from "../../assets/tech_svgs/docker.svg";
 
-import CIcon from "../../assets/tech_svgs/C.svg"
+import CIcon from "../../assets/tech_svgs/C.svg";
 
-import HTML5Icon from '../../assets/tech_svgs/HTML5.svg'
-import CSS3Icon from '../../assets/tech_svgs/CSS3.svg'
-import FirebaseIcon from '../../assets/tech_svgs/Firebase.svg'
+import FirebaseIcon from "../../assets/tech_svgs/Firebase.svg";
+import TailwindCSSIcon from "../../assets/tech_svgs/Tailwind CSS.svg";
 
 const projects = [
   {
@@ -38,7 +38,14 @@ const projects = [
     age: "11 Months Ago",
     description:
       "A full-stack application developed in a team of 4. It let people doanate to individuals and organizations while outlining what the fund would be used towards. Written in Java (Spring Boot), JavaScript (Angular) and a JSON File Storage system. The application was able to transfer files between two computers using a secure connection.",
-    techs: [JavaIcon, MavenIcon, JSONIcon, AngularIcon, JavaScriptIcon],
+    techs: [
+      JavaIcon,
+      MavenIcon,
+      JSONIcon,
+      AngularIcon,
+      JavaScriptIcon,
+      JUnit5Icon,
+    ],
   },
   {
     name: "NUTRiAPP",
@@ -46,31 +53,38 @@ const projects = [
     age: "6 Months Ago",
     description:
       "A JavaFX Application designed with the intention of monitoring food calorie intake and exercise. The application calculated a goal target calorie for each user based on their current weight and what they wanted to achieve. It also had a built in ",
-    techs: [JavaIcon, MavenIcon, JSONIcon],
+    techs: [JavaIcon, MavenIcon, JSONIcon, JUnit5Icon],
   },
   {
     name: "Book Management",
     type: "Course Project",
     age: "6 Months Ago",
     description:
-      "Independently developed a full-stack application where users and librarians could managed rented and returned books. \nKey Features:\n- User Authentication\n- Book Search\n- Book Rental\n- Book Return\n- Book History\n- Book Recommendations\n- Book Reviews",
-    techs: [ReactIcon, JavaScriptIcon, PythonIcon, FlaskIcon, PostgreSQLIcon, DockerIcon],
+      "Independently developed a full-stack application where users and librarians could managed rented and returned books. Features: Browsing Books in Libraries, Checking out books, Reserving Books, Reservation Queue System, Librarian role, Member role,",
+    techs: [
+      ReactIcon,
+      JavaScriptIcon,
+      PythonIcon,
+      FlaskIcon,
+      PostgreSQLIcon,
+      DockerIcon,
+    ],
   },
   {
     name: "MIDI Mini-Player",
     type: "Course Project",
     age: "6 Months Ago",
     description:
-      "A MicroController application where users could play MIDI Files through a buzzer via. Terminal/Physical could managed rented and returned books. \nKey Features:\n- User Authentication\n- Book Search\n- Book Rental\n- Book Return\n- Book History\n- Book Recommendations\n- Book Reviews",
-    techs: [CIcon, ],
+      "A MicroController application where users could play MIDI Files through a buzzer via. Terminal/Physical could managed rented and returned books.  ",
+    techs: [CIcon],
   },
   {
     name: "Note-Taker",
     type: "Individual Project",
     age: "1 Month Ago",
     description:
-      "A Note-taking website that organizes notes into class-specific folders. Utilizes the students course schedule to create notes auto-tagged based on creation time.",
-    techs: [ReactIcon, JavaScriptIcon, HTML5Icon, CSS3Icon, FirebaseIcon],
+      "A Note-taking website that organizes notes into class-specific tags. Utilizes the students course schedule to create notes auto-tagged based on creation time. Useful when going through your school day to reduce timr organizing.",
+    techs: [ReactIcon, JavaScriptIcon, TailwindCSSIcon, FirebaseIcon],
   },
 ];
 
@@ -83,7 +97,7 @@ export default function Projects() {
           Projects
         </p>
       </div>
-      <div className="md:w-[700px] lg:w-full xl:w-full flex flex-row flex-wrap justify-center gap-3 mx-auto">
+      <div className="md:w-full lg:w-full xl:w-full flex flex-row flex-wrap justify-center gap-3 mx-auto mt-5 mb-10">
         {projects.map((project, index) => {
           return (
             <Project
