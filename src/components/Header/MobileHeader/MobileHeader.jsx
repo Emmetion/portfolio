@@ -37,7 +37,7 @@ export default function MobileHeader() {
 
   return (
     <div className="relative">
-      <div className="w-full flex justify-between items-center p-5">
+      <div className="w-full flex justify-between items-center p-5 ">
         <button
           onClick={() => setOpen(!open)}
           className="w-fit h-[40px] flex items-center justify-center"
@@ -58,7 +58,7 @@ export default function MobileHeader() {
         <div className="p-5 bg-white opacity-100">
           {Object.entries(tabs).map(([path, label]) => {
             return (
-              <a href={path} className="block p-2">
+              <a href={path} className="block p-2 portfolio-font">
                 {path === location.pathname ? "> " : ""} {label}
               </a>
             );
@@ -75,7 +75,7 @@ export default function MobileHeader() {
             </a>
           </div>
           <div className="container mt-3">
-            <p className="w-fit mx-auto">Ⓒ Emmet Spencer</p>
+            <p className="w-fit mx-auto portfolio-font">Ⓒ Emmet Spencer</p>
           </div>
         </div>
       </div>

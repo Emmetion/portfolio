@@ -15,7 +15,7 @@ export default function DesktopHeader() {
   };
 
   return (
-    <div className="w-full h-[30px] flex flex-row justify-center gap-4 text-2xl mt-6">
+    <div className="w-full h-[30px] flex flex-row justify-center gap-4 text-2xl mt-6 portfolio-font">
       {Object.entries(tabs).map(([path, label]) => (
         <button
           onClick={() => {

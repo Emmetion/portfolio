@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 .portfolio-font {
-    font-family:'Times New Roman', Times, serif
+    font-family: 'Nunito Sans', sans-serif
+}
+
+.title-font {
+    font-family: 'Nunito Sans', sans-serif;
 }

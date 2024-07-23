@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import "./Technologies.css";
 import {
   Accordion,
   AccordionHeader,
@@ -45,15 +44,51 @@ export default function Technologies() {
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
+  const languages = [
+    { name: "Java", svg: JavaIcon },
+    { name: "Python", svg: PythonIcon },
+    { name: "JavaScript", svg: JavaScriptIcon },
+    { name: "C", svg: CIcon },
+    { name: "C++", svg: CPlusPlusIcon },
+    { name: "HTML5", svg: HTMLIcon },
+    { name: "CSS3", svg: CSS3Icon },
+    { name: "Go", svg: GolangIcon },
+  ];
+
+  const frameworks = [
+    { name: "React", svg: ReactIcon },
+    { name: "Angular", svg: AngularIcon },
+    { name: "TailwindCSS", svg: TailwindCSSIcon },
+    { name: "Bootstrap", svg: BootstrapIcon },
+    { name: "Spring", svg: SpringIcon },
+    { name: "Flask", svg: FlaskIcon },
+  ];
+
+  const databases = [
+    { name: "PostgreSQL", svg: PostgreSQLIcon },
+    { name: "SQLite", svg: SQLiteIcon },
+    { name: "MySQL", svg: MySQLIcon },
+    { name: "MongoDB", svg: MongoDBIcon },
+    { name: "Firebase", svg: FirebaseIcon },
+    { name: "Docker", svg: DockerIcon },
+    { name: "SonarQube", svg: SonarQubeIcon },
+  ];
+
+  const editors = [
+    { name: "IntelliJ", svg: IntelliJIcon },
+    { name: "PyCharm", svg: PyCharmIcon },
+    { name: "VSCode", svg: VSCodeIcon },
+  ];
+
   return (
     <div className="mx-auto text-center md:translate-y-3 items-center md:w-[600px] sm:w-[400px]">
       <div className="h1">
-        <p className="text-3xl sm:text-5xl md:text-6xl pb-2 pt-5 justify-center flex flex-row">
+        <p className="text-3xl sm:text-5xl md:text-6xl pb-2 pt-5 justify-center flex flex-row portfolio-font">
           <FaComputer className="my-auto mt-1 mr-3" />
           Technologies
         </p>
       </div>
-      <div className="max-sm:w-[370px] sm:w-[370px] max-sm:px-5 md:w-[430px] mx-auto">
+      <div className="max-sm:w-[370px] sm:w-[370px] max-sm:px-5 md:w-[430px] mx-auto portfolio-font">
         <p>
           Here you can view some of the technologies I've worked with over the
           years I've been programming.
@@ -71,14 +106,10 @@ export default function Technologies() {
         </AccordionHeader>
         <AccordionBody>
           <div className="container flex flex-wrap overflow gap-1 mt-2 max-sm:justify-center">
-            <Tech name="Java" svg={JavaIcon} />
-            <Tech name="Python" svg={PythonIcon} />
-            <Tech name="JavaScript" svg={JavaScriptIcon} />
-            <Tech name="C" svg={CIcon} />
-            <Tech name="C++" svg={CPlusPlusIcon} />
-            <Tech name="HTML5" svg={HTMLIcon} />
-            <Tech name="CSS3" svg={CSS3Icon} />
-            <Tech name="Go" svg={GolangIcon} />
+            {languages.map((lang, index) => {
+              return <Tech key={index} name={lang.name} svg={lang.svg} />;
+            })}
+            ;
           </div>
         </AccordionBody>
       </Accordion>
@@ -88,12 +119,11 @@ export default function Technologies() {
         </AccordionHeader>
         <AccordionBody>
           <div className="container flex flex-wrap overflow gap-1 mt-2 max-sm:justify-center">
-            <Tech name="React" svg={ReactIcon} />
-            <Tech name="Angular" svg={AngularIcon} />
-            <Tech name="TailwindCSS" svg={TailwindCSSIcon} />
-            <Tech name="Bootstrap" svg={BootstrapIcon} />
-            <Tech name="Spring" svg={SpringIcon} />
-            <Tech name="Flask" svg={FlaskIcon} />
+            {frameworks.map((framework, index) => {
+              return (
+                <Tech key={index} name={framework.name} svg={framework.svg} />
+              );
+            })}
           </div>
         </AccordionBody>
       </Accordion>
@@ -103,13 +133,11 @@ export default function Technologies() {
         </AccordionHeader>
         <AccordionBody>
           <div className="container flex flex-wrap overflow gap-1 mt-2 max-sm:justify-center">
-            <Tech name="PostgreSQL" svg={PostgreSQLIcon} />
-            <Tech name="SQLite" svg={SQLiteIcon} />
-            <Tech name="MySQL" svg={MySQLIcon} />
-            <Tech name="MongoDB" svg={MongoDBIcon} />
-            <Tech name="Firebase" svg={FirebaseIcon} />
-            <Tech name="Docker" svg={DockerIcon} />
-            <Tech name="SonarQube" svg={SonarQubeIcon} />
+            {databases.map((database, index) => {
+              return (
+                <Tech key={index} name={database.name} svg={database.svg} />
+              );
+            })}
           </div>
         </AccordionBody>
       </Accordion>
@@ -117,9 +145,10 @@ export default function Technologies() {
         <AccordionHeader onClick={() => handleOpen(4)}>Editors</AccordionHeader>
         <AccordionBody>
           <div className="container flex flex-wrap overflow gap-1 mt-2 max-sm:justify-center">
-            <Tech name="IntelliJ" svg={IntelliJIcon} />
-            <Tech name="PyCharm" svg={PyCharmIcon} />
-            <Tech name="VSCode" svg={VSCodeIcon} />
+            {editors.map((editor, index) => {
+              return <Tech key={index} name={editor.name} svg={editor.svg} />;
+            })}
+            ;
           </div>
         </AccordionBody>
       </Accordion>
