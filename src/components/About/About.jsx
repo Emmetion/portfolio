@@ -49,12 +49,12 @@ export default function About() {
           onClick={handleOpen}
         />
         <div className="items-center justify-center flex flex-row">
-          <div>
+          <div className="">
             <a className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-xl:text-9xl font-sans flex flex-row items-end portfolio-font">
               Hello!
             </a>
             <br />
-            <div className="w-[320px] md:w-[440px] lg:w-[540px] pl-1 lg:text-xl portfolio-font">
+            <div className="w-[320px] md:w-[430px] lg:w-[540px] pl-1 lg:text-xl portfolio-font">
               <p>
                 I'm Emmet, a passionate software developer pursuing a{" "}
                 <b>Bachelor of Science</b> in <b>Software Engineering</b> @{" "}
@@ -78,15 +78,15 @@ export default function About() {
               </p>
               <br />
             </div>
-            <div className="m-1 flex flex-row gap-3 pl-1">
+            <div className="m-1 flex flex-row gap-1 pl-1">
               <a href="https://github.com/Emmetion" target="_black">
-                <FaGithub size={30} className="icon-hover" />
+                <FaGithub className="icon-hover size-12 rounded-md border-4 border-white hover:border-gray-300 hover:bg-gray-300 " />
               </a>
               <a href="https://linkedin.com/in/emmet-spencer" target="_black">
-                <FaLinkedin size={30} className="icon-hover" />
+                <FaLinkedin className="icon-hover size-12 rounded-md border-4 border-white hover:border-gray-300 hover:bg-gray-300 " />
               </a>
               <a href="https://github.com/Emmetion/portfolio" target="_black">
-                <FaCodeBranch size={30} className="icon-hover" />
+                <FaCodeBranch className="icon-hover size-12 rounded-md border-4 border-white hover:border-gray-300 hover:bg-gray-300 " />
               </a>
             </div>
           </div>
@@ -94,9 +94,9 @@ export default function About() {
             <img
               alt="Emmet's Profile"
               src={EmmetPfp}
-              className={classNames(
-                "hover:scale-105 duration-150 ml-[5vw] md:w-[300px] h-[300px] rounded-xl shadow-lg hidden md:block shadow-gray-400 hover:cursor-pointer"
-              )}
+              className={
+                "hover:scale-105 duration-150 ml-[5vw] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] rounded-xl shadow-lg hidden md:block shadow-gray-400 hover:cursor-pointer"
+              }
               onClick={handleOpen}
             />
           </div>

@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     path: "/about",
     // errorElement: <ErrorRedirect />,
     element: (
-      <div>
+      <div className="h-screen">
         <Header />
         <About />
       </div>
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
     path: "/technologies",
     // errorElement: <ErrorRedirect />,
     element: (
-      <div>
+      <div className="h-screen">
         <Header />
         <Technologies />
       </div>
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
     path: "/projects",
     // errorElement: <ErrorRedirect />,
     element: (
-      <div>
+      <div className="h-screen">
         <Header />
         <Projects />
       </div>
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
     path: "/contact",
     // errorElement: <ErrorRedirect />,
     element: (
-      <div>
+      <div className="h-screen">
         <Header />
         <Contact />
       </div>

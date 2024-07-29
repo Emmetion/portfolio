@@ -1,9 +1,12 @@
-import { Button, Input } from "@material-tailwind/react";
+import { Button, Input, Textarea } from "@material-tailwind/react";
 import axios from "axios";
 import classNames from "classnames";
 import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-
+import { RiMailSendLine } from "react-icons/ri";
+import { IoMdMail } from "react-icons/io";
+import { RxCross2, RxCrossCircled } from "react-icons/rx";
+import { IoClose } from "react-icons/io5";
 export default function Contact() {
   const formSparkUrl = "https://submit-form.com/o9VErebzy";
   const recaptchaKey = "6LcTUfEpAAAAABK05iPz9JJblMdvYOZ_egE-0Op7";
@@ -113,9 +116,12 @@ export default function Contact() {
 
   return (
     <div className="h-full w-full flex flex-col items-center text-center p-32">
-      <div className="bg-white w-[400px] border-4 py-10">
+      <div className="bg-white w-[450px] border-2 rounded-md py-10">
         <div className="h-10 my-6 mb-8">
-          <a className="md:text-4xl text-3xl mx-auto">Contact Me</a>
+          <a className="md:text-4xl text-3xl mx-auto">
+            <IoMdMail className="inline mb-2" />
+            Contact Me
+          </a>
           {message && (
             <div
               className={classNames(
@@ -127,24 +133,33 @@ export default function Contact() {
             </div>
           )}
         </div>
-        <div className="flex flex-col gap-y-4 w-11/12 mx-auto">
+        <div className="flex flex-col gap-y-4 w-10/12 mx-auto">
           <Input
             // value={formState.name}
             value={formState.name}
+            variant="standard"
+            color="blue-gray"
             id="name"
             label="Name"
             onChange={(e) => updateForm(e)}
           />
           <Input
             value={formState.email}
+            variant="standard"
+            color="blue-gray"
             id="email"
             label="Email"
             onChange={(e) => updateForm(e)}
           />
-          <Input
+          <Textarea
             value={formState.message}
+            variant="standard"
+            color="blue-gray"
+            resize
+            defaultChecked
             id="message"
             label="Message"
+            type="textarea"
             onChange={(e) => updateForm(e)}
           />
         </div>
@@ -158,20 +173,25 @@ export default function Contact() {
         </div>
         <div className="flex flex-row justify-center mx-auto gap-3 w-3/4 my-5">
           <button
-            className="py-2 px-4 rounded-md text-white bg-red-500 hover:bg-red-600 hover:shadow-sm duration-300"
+            className="py-2 px-4 rounded-md text-white bg-red-500 hover:bg-red-600 hover:shadow-sm duration-300  uppercase portfolio-font"
             onClick={() => {
               clearForm();
             }}
           >
-            Clear
+            <IoClose size={17} className="inline mb-0.5 " /> Clear
           </button>
           <button
-            className="py-2 px-4 rounded-md text-white bg-green-500 hover:bg-green-600 duration-300 hover:shadow-sm"
+            className="px-4 rounded-md text-white bg-green-500 hover:bg-green-600 duration-300 hover:shadow-sm uppercase portfolio-font"
             onClick={() => {
               submitForm();
             }}
           >
-            Submit
+            <div className="w-fit h-fit inline odd:bg-red">
+              <RiMailSendLine size={17} className="inline-block h-fit" />
+              <div>
+                <p className="revenge"></p>
+              </div>
+            </div>
           </button>
         </div>
       </div>

@@ -38,7 +38,7 @@ function Platform({ url, svg, name }) {
       ) : null}
       <button className="h-12 w-12" onClick={handleOpen}>
         <a tabIndex={-1}>
-          <img src={svg} alt={name} className=" rounded-2xl bg-white" />
+          <img src={svg} alt={name} className="rounded-2xl bg-white" />
         </a>
       </button>
     </div>
@@ -54,7 +54,7 @@ export default function Project({
   techs = [],
 }) {
   return (
-    <div className="w-fit h-fit border-4 rounded-lg border-gray-400 portfolio-font ">
+    <div className="w-fit h-[350px] border-4 rounded-lg border-gray-400 bg-white portfolio-font ">
       <div className="flex flex-col gap-2 mr-1">
         <div className="flex flex-row">
           <div>
@@ -83,7 +83,7 @@ export default function Project({
           })}
         </div>
 
-        <div className="mt-1 md:w-[600px] sm:w-[500px] w-[400px]">
+        <div className="w-[300px] md:w-[600px] sm:w-[500px] text-start mt-auto">
           {/* Description */}
           <p className="mx-2 text-left text-lg">{description}</p>
         </div>

@@ -40,7 +40,11 @@
   border-radius: 10px;
   border-style: solid;
   border-color: white;
-  transition: border-width 0s, border-width 0s, border-color 0s,
+  border-width: 10px;
+  transition:
+    border-width 0s,
+    border-width 0s,
+    border-color 0s,
     background-color 0s;
 }
 
@@ -53,7 +57,9 @@
 }
 
 .icon-hover:hover {
-  scale: 1.05;
-  transition: 100ms;
+  scale: 1;
+  background: #d4d4d4;
+  border-color: #d4d4d4;
+  transition: 200ms;
   cursor: pointer;
 }
