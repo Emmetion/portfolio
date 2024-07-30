@@ -4,14 +4,20 @@ import MobileHeader from "./MobileHeader/MobileHeader";
 
 import "./Header.css";
 
-export default function Header() {
+export default function Header({ currentView, setCurrentView }) {
   return (
     <div>
       <div className="desktop-header">
-        <DesktopHeader />
+        <DesktopHeader
+          currentView={currentView}
+          setCurrentView={setCurrentView}
+        />
       </div>
       <div className="mobile-header">
-        <MobileHeader />
+        <MobileHeader
+          currentView={currentView}
+          setCurrentView={setCurrentView}
+        />
       </div>
     </div>
   );

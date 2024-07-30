@@ -1,23 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useLocation, useNavigate, useNavigation } from "react-router-dom";
 import classNames from "classnames";
 
 import HamburgerIcon from "../../../assets/burger-menu-svgrepo-com.svg";
-import { FaGithub, FaLink, FaLinkedin } from "react-icons/fa6";
-import { FaCodeBranch, FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaCodeBranch } from "react-icons/fa";
 
-export default function MobileHeader() {
+export default function MobileHeader({ currentView, setCurrentView }) {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(); // Step 1: Create a ref for the menu
 
-  const location = useLocation();
-  const navigate = useNavigate();
-
   const tabs = {
-    "/about": "About",
-    "/projects": "Projects",
-    "/technologies": "Technologies",
-    "/contact": "Contact",
+    about: "About",
+    projects: "Projects",
+    technologies: "Technologies",
+    contact: "Contact",
   };
 
   // Handle cicking outside the menu
@@ -34,6 +30,8 @@ export default function MobileHeader() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [menuRef]);
+
+  
 
   return (
     <div className="relative">
@@ -58,8 +56,15 @@ export default function MobileHeader() {
         <div className="p-5 bg-white opacity-100">
           {Object.entries(tabs).map(([path, label]) => {
             return (
-              <a href={path} className="block p-2 portfolio-font">
-                {path === location.pathname ? "> " : ""} {label}
+              <a
+                key={path}
+                onClick={() => {
+                  setCurrentView(path);
+                  setOpen(false);
+                }}
+                className="block p-2 portfolio-font"
+              >
+                {path === currentView ? "> " : ""} {label}
               </a>
             );
           })}

@@ -146,7 +146,7 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="w-full px-10 flex flex-row flex-wrap items-stretch justify-center gap-x-3 gap-y-5 mx-auto mt-5 mb-10 ">
+      <div className="w-full px-10 flex flex-row flex-wrap items-stretch justify-center gap-x-3 gap-y-5 mx-auto mt-5 mb-10">
         {projects.map((project, index) => {
           return (
             <Project
