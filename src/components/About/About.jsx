@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaCodeBranch, FaGithub, FaLinkedin } from "react-icons/fa";
 import RITLogo from "../../assets/RIT-Logo.png";
 import EmmetPfp from "../../assets/IMG_5119.png";
@@ -10,6 +10,40 @@ import {
   DialogBody,
   DialogFooter,
 } from "@material-tailwind/react";
+function HelloTypewriter() {
+  const [index, setIndex] = useState(0);
+  const [speed, setSpeed] = useState(300);
+  const text = "Hello!";
+  const [currentText, setCurrentText] = useState("");
+
+  useEffect(() => {
+    if (index < text.length) {
+      const timeout = setTimeout(() => {
+        setCurrentText((prev) => prev + text.charAt(index));
+        setIndex((prev) => {
+          if (index == 2) {
+            setSpeed(200);
+          } else if (index == 3) {
+            setSpeed(300);
+          }
+          return prev + 1;
+        });
+      }, speed);
+      return () => clearTimeout(timeout);
+    }
+  }, [index, text, speed]);
+
+  return (
+    <div className="w-max duration-200 ease-out">
+      <a className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-xl:text-9xl font-sans flex flex-row items-end portfolio-font">
+        {currentText}
+        <div className="w-10 border-b-8 border-orange-400 animate-[blinkingcaret_1.6s_ease-in-out_infinite] text-white">
+          {"‎ "}
+        </div>
+      </a>
+    </div>
+  );
+}
 
 export default function About() {
   const [open, setOpen] = React.useState(false);
@@ -50,9 +84,9 @@ export default function About() {
         />
         <div className="items-center justify-center flex flex-row">
           <div className="">
-            <a className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-xl:text-9xl font-sans flex flex-row items-end portfolio-font">
-              Hello!
-            </a>
+            <div className="">
+              <HelloTypewriter />
+            </div>
             <br />
             <div className="w-[320px] md:w-[430px] lg:w-[540px] pl-1 lg:text-xl portfolio-font">
               <p>

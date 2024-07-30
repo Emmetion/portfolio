@@ -108,6 +108,7 @@ export default function Contact() {
   const clearForm = () => {
     setFormState(initialFormState);
     setMessage(null);
+    recaptchaRef.current.reset();
   };
 
   const updateRecaptchaToken = (token) => {
@@ -178,7 +179,7 @@ export default function Contact() {
               clearForm();
             }}
           >
-            <IoClose size={17} className="inline mb-0.5 " /> Clear
+            <IoClose size={17} className="inline mb-1 mr-1 " />Clear
           </button>
           <button
             className="px-4 rounded-md text-white bg-green-500 hover:bg-green-600 duration-300 hover:shadow-sm uppercase portfolio-font"
@@ -187,10 +188,11 @@ export default function Contact() {
             }}
           >
             <div className="w-fit h-fit inline odd:bg-red">
-              <RiMailSendLine size={17} className="inline-block h-fit" />
-              <div>
-                <p className="revenge"></p>
-              </div>
+              <RiMailSendLine
+                size={17}
+                className="inline-block h-fit mb-1 mr-1"
+              />
+              <span>Send</span>
             </div>
           </button>
         </div>

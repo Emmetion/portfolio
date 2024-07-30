@@ -7,7 +7,7 @@ export default function Tech({ name, svg, title, className }) {
     >
       <img
         src={svg}
-        title={svg}
+        title={title}
         alt={title}
         className={"w-10 h-10 bg-white rounded-md m-1 p-1 "}
       />

@@ -30,7 +30,7 @@ const projects = [
   {
     name: "RapidTransfer",
     type: "Hackathon",
-    age: "6 Months Ago",
+    age: "5 Months Ago",
     description:
       "Hackathon Project where me and 3 teammates developed a File Transfer Command-Line application. Written in Golang, it contained 6 subcommands and utilized a PostgreSQL server hosted on Google Cloud Platform. The application transfered files between two compuers using a peer-to-peer connection. I developed the friend-management and database operations for the app.",
     platforms: [
@@ -139,6 +139,7 @@ export default function Projects() {
           Projects
         </p>
       </div>
+      <i class="fa fa-xing" aria-hidden="true"></i>
       <div className="w-2/3 mx-auto">
         <p className="md:text-xl mx-auto portfolio-font">
           This page displays some projects I've developed over the years.

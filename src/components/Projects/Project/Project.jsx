@@ -54,7 +54,7 @@ export default function Project({
   techs = [],
 }) {
   return (
-    <div className="w-fit h-[350px] border-4 rounded-lg border-gray-400 bg-white portfolio-font ">
+    <div className="w-fit h-fit border-4 rounded-lg border-gray-400 bg-white portfolio-font ">
       <div className="flex flex-col gap-2 mr-1">
         <div className="flex flex-row">
           <div>

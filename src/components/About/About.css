@@ -63,3 +63,23 @@
   transition: 200ms;
   cursor: pointer;
 }
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinking-caret {
+  display: inline-block;
+  width: 10px;
+  height: 100%;
+  background-color: orange;
+  animation: blink 1s step-start infinite;
+}

@@ -13,7 +13,7 @@ import Header from "./components/Header/Header.jsx";
 import Technologies from "./components/Technologies/Technologies.jsx";
 
 const ErrorRedirect = () => {
-  return <Navigate to="/" replace />;
+  return <Navigate to="/about" replace />;
 };
 
 const router = createBrowserRouter([
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/about",
-    // errorElement: <ErrorRedirect />,
+    errorElement: <ErrorRedirect />,
     element: (
       <div className="h-screen">
         <Header />
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/technologies",
-    // errorElement: <ErrorRedirect />,
+    errorElement: <ErrorRedirect />,
     element: (
       <div className="h-screen">
         <Header />
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/projects",
-    // errorElement: <ErrorRedirect />,
+    errorElement: <ErrorRedirect />,
     element: (
       <div className="h-screen">
         <Header />
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/contact",
-    // errorElement: <ErrorRedirect />,
+    errorElement: <ErrorRedirect />,
     element: (
       <div className="h-screen">
         <Header />
