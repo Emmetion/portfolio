@@ -13,7 +13,7 @@ import Header from "./components/Header/Header.jsx";
 import Technologies from "./components/Technologies/Technologies.jsx";
 
 const ErrorRedirect = () => {
-  return <Navigate to="/about" replace />;
+  return <Navigate to="/portfolio" replace />;
 };
 
 const router = createBrowserRouter(
