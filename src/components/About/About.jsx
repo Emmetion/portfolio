@@ -37,7 +37,7 @@ function HelloTypewriter() {
     <div className="w-max duration-200 ease-out">
       <a className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-xl:text-9xl font-sans flex flex-row items-end portfolio-font">
         {currentText}
-        <div className="w-10 border-b-8 border-orange-400 animate-[blinkingcaret_1.6s_ease-in-out_infinite] text-white">
+        <div className="w-[.34em] border-b-4 border-orange-400 animate-[blinkingcaret_1.6s_ease-in-out_infinite] text-white">
           {"‎"}
         </div>
       </a>

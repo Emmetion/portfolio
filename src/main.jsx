@@ -16,53 +16,58 @@ const ErrorRedirect = () => {
   return <Navigate to="/about" replace />;
 };
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      errorElement: <ErrorRedirect />,
+      element: <Navigate to="/about" />,
+    },
+    {
+      path: "/about",
+      errorElement: <ErrorRedirect />,
+      element: (
+        <div className="h-screen">
+          <Header />
+          <About />
+        </div>
+      ),
+    },
+    {
+      path: "/technologies",
+      errorElement: <ErrorRedirect />,
+      element: (
+        <div className="h-screen">
+          <Header />
+          <Technologies />
+        </div>
+      ),
+    },
+    {
+      path: "/projects",
+      errorElement: <ErrorRedirect />,
+      element: (
+        <div className="h-screen">
+          <Header />
+          <Projects />
+        </div>
+      ),
+    },
+    {
+      path: "/contact",
+      errorElement: <ErrorRedirect />,
+      element: (
+        <div className="h-screen">
+          <Header />
+          <Contact />
+        </div>
+      ),
+    },
+  ],
   {
-    path: "/",
-    errorElement: <ErrorRedirect />,
-    element: <Navigate to="/about" />,
-  },
-  {
-    path: "/about",
-    errorElement: <ErrorRedirect />,
-    element: (
-      <div className="h-screen">
-        <Header />
-        <About />
-      </div>
-    ),
-  },
-  {
-    path: "/technologies",
-    errorElement: <ErrorRedirect />,
-    element: (
-      <div className="h-screen">
-        <Header />
-        <Technologies />
-      </div>
-    ),
-  },
-  {
-    path: "/projects",
-    errorElement: <ErrorRedirect />,
-    element: (
-      <div className="h-screen">
-        <Header />
-        <Projects />
-      </div>
-    ),
-  },
-  {
-    path: "/contact",
-    errorElement: <ErrorRedirect />,
-    element: (
-      <div className="h-screen">
-        <Header />
-        <Contact />
-      </div>
-    ),
-  },
-]);
+    basename: "/portfolio",
+  }
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
