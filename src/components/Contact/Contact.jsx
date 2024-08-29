@@ -1,11 +1,10 @@
-import { Button, Input, Textarea } from "@material-tailwind/react";
+import { Input, Textarea } from "@material-tailwind/react";
 import axios from "axios";
 import classNames from "classnames";
 import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { RiMailSendLine } from "react-icons/ri";
 import { IoMdMail } from "react-icons/io";
-import { RxCross2, RxCrossCircled } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
 export default function Contact() {
   const formSparkUrl = "https://submit-form.com/o9VErebzy";
@@ -116,8 +115,8 @@ export default function Contact() {
   };
 
   return (
-    <div className="h-full w-full flex flex-col items-center text-center p-32">
-      <div className="bg-white w-[450px] border-2 rounded-md py-10">
+    <div className="h-fit w-full flex flex-col items-center text-center px-32 pt-16">
+      <div className="bg-white w-[450px] border-2 rounded-xl py-8">
         <div className="h-10 my-6 mb-8">
           <a className="md:text-4xl text-3xl mx-auto">
             <IoMdMail className="inline mb-2" />
@@ -136,7 +135,6 @@ export default function Contact() {
         </div>
         <div className="flex flex-col gap-y-4 w-10/12 mx-auto">
           <Input
-            // value={formState.name}
             value={formState.name}
             variant="standard"
             color="blue-gray"
@@ -175,17 +173,14 @@ export default function Contact() {
         <div className="flex flex-row justify-center mx-auto gap-3 w-3/4 my-5">
           <button
             className="py-2 px-4 rounded-md text-white bg-red-500 hover:bg-red-600 hover:shadow-sm duration-300  uppercase portfolio-font"
-            onClick={() => {
-              clearForm();
-            }}
+            onClick={clearForm}
           >
-            <IoClose size={17} className="inline mb-1 mr-1 " />Clear
+            <IoClose size={17} className="inline mb-1 mr-1 " />
+            Clear
           </button>
           <button
             className="px-4 rounded-md text-white bg-green-500 hover:bg-green-600 duration-300 hover:shadow-sm uppercase portfolio-font"
-            onClick={() => {
-              submitForm();
-            }}
+            onClick={submitForm}
           >
             <div className="w-fit h-fit inline odd:bg-red">
               <RiMailSendLine

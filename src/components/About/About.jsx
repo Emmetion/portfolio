@@ -78,15 +78,13 @@ export default function About() {
           alt="Emmet's Profile"
           src={EmmetPfp}
           className={classNames(
-            "sm:block md:hidden hover:scale-105 duration-150 w-[200px] h-[200px] rounded-xl shadow-lg shadow-gray-400 self-center mb-3"
+            "sm:block md:hidden hover:scale-105 duration-150 h-[200px] rounded-xl shadow-lg shadow-gray-400 self-center mb-3"
           )}
           onClick={handleOpen}
         />
         <div className="items-center justify-center flex flex-row">
           <div className="">
-            <div className="">
-              <HelloTypewriter />
-            </div>
+            <HelloTypewriter />
             <br />
             <div className="w-[320px] md:w-[430px] lg:w-[540px] pl-1 lg:text-xl portfolio-font">
               <p>
@@ -95,7 +93,7 @@ export default function About() {
                 <a className="text-white inline-flex items-center group my-auto align-middle mb-1 ring-orange-400 bg-orange-400 rounded-l-md px-1 shadow-md ml-1">
                   Software Engineering
                 </a>
-                <a className="text-white inline-flex group my-auto align-middle mb-1 ring-orange-400 bg-red-400 px-1 shadow-md">
+                <a className="text-white inline-flex group my-auto align-middle mb-1 ring-orange-400 bg-black italic px-1 shadow-md">
                   @{" "}
                 </a>
                 <a

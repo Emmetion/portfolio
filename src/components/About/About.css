@@ -73,6 +73,7 @@
   height: 100%;
   background-color: orange;
   animation: blink 1s step-start infinite;
+  transition-duration: 0ms;
 }
 
 .welcome-text::after {
