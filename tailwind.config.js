@@ -7,7 +7,7 @@ module.exports = withMT({
       keyframes: {
         blinkingcaret: {
           "0%, 100%": { opacity: "0.2" },
-          "50%": { opacity: "1" },
+          "50%": { opacity: ".95" },
         },
       },
     },

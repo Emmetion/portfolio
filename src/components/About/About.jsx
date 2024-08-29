@@ -19,7 +19,7 @@ function HelloTypewriter() {
   useEffect(() => {
     if (index < text.length) {
       const timeout = setTimeout(() => {
-        setCurrentText((prev) => prev + text.charAt(index));
+        // setCurrentText((prev) => prev + text.charAt(index));
         setIndex((prev) => {
           if (index == 2) {
             setSpeed(200);
@@ -36,8 +36,8 @@ function HelloTypewriter() {
   return (
     <div className="w-max duration-200 ease-out">
       <a className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-xl:text-9xl font-sans flex flex-row items-end portfolio-font">
-        {currentText}
-        <div className="w-[.34em] border-b-4 border-orange-400 animate-[blinkingcaret_1.6s_ease-in-out_infinite] text-white">
+        <p className="welcome-text">{""}</p>
+        <div className="border-l-4 border-orange-400 duration-1000 animate-[blinkingcaret_1.4s_ease-in-out_infinite] delay-300 text-white">
           {"‎"}
         </div>
       </a>
@@ -78,31 +78,35 @@ export default function About() {
           alt="Emmet's Profile"
           src={EmmetPfp}
           className={classNames(
-            "sm:block md:hidden hover:scale-105 duration-150 w-[200px] h-[200px] rounded-xl shadow-lg shadow-gray-400 self-center mb-3"
+            "sm:block md:hidden hover:scale-105 duration-150 h-[200px] rounded-xl shadow-lg shadow-gray-400 self-center mb-3"
           )}
           onClick={handleOpen}
         />
         <div className="items-center justify-center flex flex-row">
           <div className="">
-            <div className="">
-              <HelloTypewriter />
-            </div>
+            <HelloTypewriter />
             <br />
             <div className="w-[320px] md:w-[430px] lg:w-[540px] pl-1 lg:text-xl portfolio-font">
               <p>
                 I'm Emmet, a passionate software developer pursuing a{" "}
-                <b>Bachelor of Science</b> in <b>Software Engineering</b> @{" "}
+                <b>Bachelor of Science</b> in
+                <a className="text-white inline-flex items-center group my-auto align-middle mb-1 ring-orange-400 bg-orange-400 rounded-l-md px-1 shadow-md ml-1">
+                  Software Engineering
+                </a>
+                <a className="text-white inline-flex group my-auto align-middle mb-1 ring-orange-400 bg-black italic px-1 shadow-md">
+                  @{" "}
+                </a>
                 <a
-                  className="text-white inline-flex items-center group my-auto align-middle mb-1 ring-orange-400 bg-orange-400 rounded-md px-1 hover:bg-orange-500 duration-200 hover:ring-orange-500 shadow-sm hover:shadow-md"
+                  className="text-white inline-flex items-center group my-auto align-middle mb-1 ring-orange-400 bg-orange-400 rounded-r-md px-1 hover:bg-orange-500 duration-200 hover:ring-orange-500 shadow-md"
                   href="http://rit.edu"
                   target="_blank"
                 >
                   <img
                     alt="RIT Logo"
                     src={RITLogo}
-                    className="group rit-logo duration-100 align-middle w-[24px] h-[24px] mr-[3px] sm:mb-[1px] md:mb-[2px] md:w-[28px] md:h-[28px] lg:w-[30px] lg:h-[30px]"
+                    className="group rit-logo duration-100 align-middle size-6"
                   />
-                  RIT!
+                  <a className="ml-1 font-bold">RIT!</a>
                 </a>
               </p>
               <br />

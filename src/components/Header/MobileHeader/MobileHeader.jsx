@@ -7,7 +7,7 @@ import { FaCodeBranch } from "react-icons/fa";
 
 export default function MobileHeader({ currentView, setCurrentView }) {
   const [open, setOpen] = useState(false);
-  const menuRef = useRef(); // Step 1: Create a ref for the menu
+  const menuRef = useRef();
 
   const tabs = {
     about: "About",
@@ -30,8 +30,6 @@ export default function MobileHeader({ currentView, setCurrentView }) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [menuRef]);
-
-  
 
   return (
     <div className="relative">
@@ -62,25 +60,14 @@ export default function MobileHeader({ currentView, setCurrentView }) {
                   setCurrentView(path);
                   setOpen(false);
                 }}
-                className="block p-2 portfolio-font"
+                className="block p-2 portfolio-font cursor-pointer hover:bg-gray-100 rounded-md duration-100"
               >
                 {path === currentView ? "> " : ""} {label}
               </a>
             );
           })}
-          <div className="mt-3 flex flex-row gap-3 w-fit mx-auto">
-            <a href="https://github.com/Emmetion" target="_black">
-              <FaGithub size={30} className="icon-hover" />
-            </a>
-            <a href="https://linkedin.com/in/emmet-spencer" target="_black">
-              <FaLinkedin size={30} className="icon-hover" />
-            </a>
-            <a href="https://github.com/Emmetion/portfolio" target="_black">
-              <FaCodeBranch size={30} className="icon-hover" />
-            </a>
-          </div>
           <div className="container mt-3">
-            <p className="w-fit mx-auto portfolio-font">Ⓒ Emmet Spencer</p>
+            <p className="w-fit mx-auto portfolio-font">Made by Emmet</p>
           </div>
         </div>
       </div>
