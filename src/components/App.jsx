@@ -4,6 +4,7 @@ import Projects from "./Projects/Projects";
 import Contact from "./Contact/Contact";
 import Header from "./Header/Header";
 import About from "./About/About";
+import Background from "./Background/Background";
 
 export default function App() {
   const [currentView, setCurrentView] = useState("about");
@@ -25,8 +26,9 @@ export default function App() {
 
   return (
     <div className="h-screen">
-      <Header currentView={currentView} setCurrentView={setCurrentView} />
-      {renderView()}
+      <Background />
+      {/* <Header currentView={currentView} setCurrentView={setCurrentView} /> */}
+      {/* {renderView()} */}
     </div>
   );
 }
